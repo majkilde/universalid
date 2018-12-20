@@ -1,4 +1,4 @@
-from lib.settings import Settings
+from universalid.settings import Settings
 
 
 class Encode:

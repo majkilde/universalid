@@ -1,8 +1,8 @@
 import unittest
-from universalid import Unid
+from universalid.universalid import Unid
 import datetime
-from lib.settings import Settings
-from lib.encode import Encode
+from universalid.settings import Settings
+from universalid.encode import Encode
 
 class TestUniversalID(unittest.TestCase):
     max_time = datetime.datetime(2999, 12, 31, 23, 59, 59, 9998, tzinfo=None)

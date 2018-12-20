@@ -1,11 +1,7 @@
-# Nano Id -> https://github.com/puyuan/py-nanoid
-# Nano Id collision calculator -> https://zelark.github.io/nano-id-cc/
-# Universal ID in Lotus Notes -> https://www-01.ibm.com/support/docview.wss?uid=swg21112556
-
 from datetime import datetime
 from secrets import randbelow
-from lib.settings import Settings
-from lib.encode import Encode
+from universalid.settings import Settings
+from universalid.encode import Encode
 
 
 # UNID format, default length = 32:
