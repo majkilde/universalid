@@ -1,8 +1,11 @@
 import unittest
-from universalid.universalid import Unid
+from universalid import Unid
 import datetime
 from universalid.settings import Settings
 from universalid.encode import Encode
+
+import doctest
+
 
 class TestUniversalID(unittest.TestCase):
     max_time = datetime.datetime(2999, 12, 31, 23, 59, 59, 9998, tzinfo=None)
@@ -39,7 +42,7 @@ class TestUniversalID(unittest.TestCase):
         self.assertEqual(Unid.get_time("00iruk000000"), TestUniversalID.min_time)
 
         now = datetime.datetime.utcnow()
-        unid = Unid.create(now)
+        unid = Unid.create(time=now)
         self.assertEqual(now, Unid.get_time(unid))
 
     def test_create(self):
@@ -50,12 +53,18 @@ class TestUniversalID(unittest.TestCase):
 
     def test_create_prefix(self):
         t = datetime.datetime.now()
-        unid = Unid.create(t, prefix="ThisPrefixIsLongerThan20Characters")
+        unid = Unid.create("ThisPrefixIsLongerThan20Characters", t)
         self.assertEqual(len(unid), Settings.TOTAL_LENGTH)
         self.assertEqual(Unid.get_time(unid), t)
 
         unid = Unid.create(prefix="Illegal Æ_./? Chars")
         self.assertEqual(unid[:12], "ILLEGALCHARS")
+
+    def test_doctest(self):
+        suite = unittest.TestSuite()
+        suite.addTest(doctest.DocTestSuite("universalid"))
+        result = unittest.TextTestRunner().run(suite)
+        self.assertTrue(result.wasSuccessful())
 
 
 if __name__ == '__main__':
