@@ -3,4 +3,3 @@ API
 
 .. automodule:: universalid
    :members:
-

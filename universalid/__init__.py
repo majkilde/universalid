@@ -33,16 +33,25 @@ class Unid:
         Examples:
 
         To create a new unid based on the current date/time
-        >> Unid.create()
-        'B90HSWB2RP1ISBQVGSBU0PK8L5T0HWY0'
+
+        .. code-block:: python
+
+            >> Unid.create()
+            'B90HSWB2RP1ISBQVGSBU0PK8L5T0HWY0'
 
         Create a unid with a custom prefix, e.g. a country code
-        >> Unid.create('dk')
-        'DK396ODJJ0QUE4APFO2H0PK8L8R5RB31'
+
+        .. code-block:: python
+
+           >> Unid.create('dk')
+           'DK396ODJJ0QUE4APFO2H0PK8L8R5RB31'
 
         Create a unid based on a specific time
-        >> Unid.create(time=datetime.datetime(2018, 12, 20, 11, 34, 15, 229884))
-        'ODPN11WEQJWXVDOE3A390PK16P34XDO2'
+
+        .. code-block:: python
+
+            >> Unid.create(time=datetime.datetime(2018, 12, 20, 11, 34, 15, 229884))
+            'ODPN11WEQJWXVDOE3A390PK16P34XDO2'
 
         """
         time = time if time else datetime.utcnow()
@@ -67,8 +76,10 @@ class Unid:
     def get_time(unid):
         """
         Extract the creation date/time from a given unid
-        :param unid: the unid
+
+        :param str unid: the unid
         :return:  the date/time from the unid
+        :rtype: datetime
 
         >>> Unid.get_time("7ADQ2D6JCJXI2Q82J06X0PK16P34XDO1")
         datetime.datetime(2018, 12, 20, 11, 34, 15, 229884)
