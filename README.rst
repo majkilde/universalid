@@ -11,7 +11,7 @@ Features
 * Unid is case-insentitive 
 * Base 36 encoded (digits + letters from A-Z) 
 * Uses the _secrets_ library to generate cryptographically strong pseudo-random numbers
-* Fully documented
+* Fully documented: https://universalid.readthedocs.io/en/latest/
 * 100% coverage
 
 
