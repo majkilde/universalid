@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="universalid",
-    version="0.0.1",
+    version="1.0.0",
     author="Jakob Majkilde",
     author_email="jakob@mjakilde.dk",
     description="UUID with built-in creation date",

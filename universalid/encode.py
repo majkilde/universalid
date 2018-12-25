@@ -30,7 +30,6 @@ class Encode:
             return False
         return True
 
-
     @staticmethod
     def str_to_int(s):
         i = int(s, base=Settings.BASE)
