@@ -4,5 +4,12 @@ Function reference
 Unid class
 ----------
 
-.. autofunction:: universalid.Unid.create()
+.. automodule:: universalid
+
+.. automodule:: universalid.universalid
+
+.. autoclass:: universalid.universalid.Unid
+   :members:
+
+
 

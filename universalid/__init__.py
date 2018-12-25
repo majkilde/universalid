@@ -1,3 +1,13 @@
+"""
+    universalid
+    ~~~~~~~~~~~
+
+    Create unique id's
+
+    :copyright: (c) 2018 Jakob Majkilde.
+    :license: MIT, see LICENSE.txt for more details.
+"""
+
 name = "universalid"
 
 from datetime import datetime
@@ -6,7 +16,11 @@ from universalid.settings import Settings
 from universalid.encode import Encode
 
 
+
 class Unid:
+    """
+    Even more here
+    """
     time_sequence = 0  # Add a sequence number to make the datetime part unique when Unid's is created simultaneously
 
     @staticmethod
