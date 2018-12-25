@@ -1,40 +1,34 @@
 """
-    universalid
-    ~~~~~~~~~~~
-
-    Create unique id's
-
-    :copyright: (c) 2018 Jakob Majkilde.
-    :license: MIT, see LICENSE.txt for more details.
+License: MIT
+Author: Jakob Majkilde
 """
-
-name = "universalid"
-
 from datetime import datetime
 from secrets import randbelow
 from universalid.settings import Settings
 from universalid.encode import Encode
 
+name = "universalid"
 
 
 class Unid:
     """
-    Even more here
+    Class here
     """
     time_sequence = 0  # Add a sequence number to make the datetime part unique when Unid's is created simultaneously
 
     @staticmethod
     def create(prefix=None, time=None):
         """
-        Creates a 32-character combination of digits (0-9, A-Z), where
-        * First 20 digits: The specified prefix plus random digits
-        * Next 7 digits: Date/time
-        * Next 4 digits: microseconds
-        * last digit: sequence number
+        Creates a 32-character combination of digits (0-9, A-Z), where:
+            * First 20 digits: The specified prefix plus random digits
+            * Next 7 digits: Date/time
+            * Next 4 digits: microseconds
+            * last digit: sequence number
 
-        :param prefix: Optional. Defaults to None. The resulting unid will start with the specified prefix
-        :param time: Optional. Defaults to datetime.utcnow()
-        :return: new unique unid [string]
+        :param str prefix: Optional. Defaults to None. The resulting unid will start with the specified prefix
+        :param datetime time: Optional. Defaults to datetime.utcnow()
+        :return: new unique unid
+        :rtype: str
 
         Examples:
 
