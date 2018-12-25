@@ -66,6 +66,14 @@ class TestUniversalID(unittest.TestCase):
         result = unittest.TextTestRunner().run(suite)
         self.assertTrue(result.wasSuccessful())
 
+    def test_sequence(self):
+        seq_first = Unid.create()[-1:]
+        seq_next = Unid.create()[-1:]
+        for _ in range(Settings.BASE):
+            seq_base = Unid.create()[-1:]
+        self.assertNotEqual(seq_first, seq_next)
+        self.assertEqual(seq_next, seq_base)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -5,3 +5,4 @@ universalid.egg-info/
 build/
 dist/
 docs/_build/
+.coverage
